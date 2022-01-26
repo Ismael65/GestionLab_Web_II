@@ -1,0 +1,146 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 07/07/2021, 07:50:46 AM
+    Author     : ismael
+*/
+
+        body{
+            width: 400px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        h1{
+            color: #0D06F5;
+            align-items: center;
+            margin-left: 10px;
+            text-shadow: #CC0000 2px 2px 4px;
+        }
+        .fondoTabla{
+            /*background: #FCAF3E;*/
+            text-align: center;
+            /*font-weight: bold;*/
+            font-size: 1.2em; 
+            border-collapse: collapse;
+            border-top: none;
+            
+        }
+        #tabla_elemento1{
+            margin-left: 40px;
+            
+            /*color: #2E3436;*/
+        }
+        #tabla_elemento2{
+            margin-left: 140px;
+            background: #888A85;
+            /*color: #2E3436;*/
+        }
+        #elementos{
+            margin-left: 20px;
+        }
+        #titulo_elemento{
+            margin-left: 30px;
+            color: #0D06F5;
+        }        
+        #H{
+            background: #417411;            
+        }
+        #Li, #Na, #K, #Rb, #Cs, #Fr{
+            background: #EF2929;            
+        }
+        #Be, #Mg, #Ca, #Sr, #Ba, #Ra{
+            background: #E3A243;
+        }
+        #Sc, #Y, #Lu, #Rf{
+            background: #D3D7CF;
+        }
+        #Ti, #Zr, #Hf, #Rf2, #V, #Nb, #Ta, #Db, #Cr, #Mo, #W, #Sg,
+        #Mn, #Tc, #Re, #Bh, #Fe, #Ru, #Os, #Hs, #Co, #Rh, #Ir, #Mt, 
+        #Ni, #Pd, #Pt, #Ds, #Cu, #Ag, #Au, #Rg, #Zn, #Cd, #Hg, #Cn{
+            background: #4E9A06;
+        }
+        #He, #Ne, #Ar, #Kr, #Xe, #Rn, #Uuo{
+            background: #5989BD;
+        }
+        #F, #Cl, #Br, #I, #At, #Uus{
+            background: #EDD400;
+        }
+        #La, #Ce, #Pr, #Nd, #Pm, #Sm, #Eu, 
+        #Gd, #Tb, #Dy, #Ho, #Er, #Tm, #Yb{
+            background: #DE04A6;
+        }
+        #Ac, #Th, #Pa, #U, #Np, #Pu, #Am, 
+        #Cm, #Bk, #Cf,#Es, #Fm, #Md, #No{
+            background: #AF28F0;
+        }
+        #B, #Si, #Ge, #As, #Sb, #Te, #Po{
+            background: #4E29DC;
+        }
+        #C, #N, #O, #P, #S, #Se{
+            background: #406E14;
+        }
+        #Al, #Ga, #In, #Tl, #Uut, 
+        #Sn, #Pb, #Fl, #Bi, #Uup, #Lv{
+            background: #F64406;
+        }
+        .union{
+          border: none;  
+        }
+        /*  VENTANA MODAL  */
+        .ventana{
+                background: #00A8CC;
+                width: 700px;
+                color: #FCE94F;
+                font-family: sans-serif, Helvetica, Arial;
+                font-size: 18px;
+                text-align: center;
+                padding: 10px;
+                main-height: 200px;
+                border-radius: 22px;
+                position: absolute;
+                left: 50px;
+                top: 10px;                   
+                /*display: none;*/
+            }            
+            #abrirVentana{                
+                width: 30%;
+                position: absolute;
+                left: 36%;
+                top: 20%;
+            }
+            /*#cerrar img{
+                position: absolute;
+                right: 3px;
+                top: 1px;
+            }*/
+        /* BOTONES DE LA TABLA PERIODICA */
+        button{
+            width: 30px;
+            height: 30px;
+            border: none;
+            padding: 0px;
+            font-size: 0.8em;
+        }
+        #borrarElementos{
+            width: 10%;
+            position: absolute;
+            left: 45%;
+            top: 93.5%;
+            border: solid 1px;
+            color: #0D06F5;
+            background-color: #2879EE;
+            text-decoration: none;
+        }
+        #acepta_elemento {
+            width: 10%;
+            top: 93.5%;
+            position: absolute;
+            left: 45%;
+            border: solid 1px;
+            color: #0D06F5;
+            background-color: #2879EE;
+        }
+    

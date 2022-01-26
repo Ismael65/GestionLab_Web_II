@@ -1,0 +1,171 @@
+				
+<optgroup label=”I_ANÁLISIS_PETROGRÁFICO_Y_MINEROGRÁFICO”>	I.- ANÁLISIS PETROGRÁFICO Y MINEROGRÁFICO			
+<option id= “option2”>	CODIGO	DESCRIPCIÓN	PRECIO EN $ POR MUESTRA	</option>
+<option id= “option3”>	PP-01	Corte de taco para sección petrográfica	3,6	</option>
+<option id= “option4”>	PP-02	Sección petrográfica normal (5,5 x 3,0 cm) de roca deleznable	8	</option>
+<option id= “option5”>	PP-03	Sección petrográfica normal (5,5 x 3,0 cm) de roca consistente	6,16	</option>
+<option id= “option6”>	PP-04	Sección petrográfica impregnada en vacío (no incluye la resina)	8,58	</option>
+<option id= “option7”>	PP-05	Sección petrográfica impregnada y teñida (no incluye la resina ni el colorante	9,32	</option>
+<option id= “option8”>	PP-06	Sección minerográfica en montura de plástico	12,4	</option>
+<option id= “option9”>	PP-07	Sección petrográfica de material no consolidado (arenas, etc.)	8	</option>
+<option id= “option10”>	PP-08	Sección delgada	12,4	</option>
+</optgroup >				
+<optgroup label=”II_ANÁLISIS_PETROGRÁFICO_Y_MINEROGRÁFICO”>	II.- ANÁLISIS PETROGRÁFICO Y MINEROGRÁFICO			
+<option id= “option12”>	CODIGO	DESCRIPCIÓN	PRECIO EN $ POR MUESTRA	</option>
+<option id= “option13”>	AP-01	Análisis petrográfico completo (no incluye la elaboración de la sección petrográfica)	21	</option>
+<option id= “option14”>	AP-02	Una Imagen Digital	5,24	</option>
+<option id= “option15”>	AP-03	Un Análisis Mineralógico (3 productos)	20,98	</option>
+<option id= “option16”>	AP-04	Un Análisis Minerográfico	20,98	</option>
+<option id= “option17”>	AP-05	Un Análisis Morfoscópico (3 productos)	20,98	</option>
+<option id= “option18”>	AP-06	Un Análisis de Liberación Relativa (6 mallas)	20,98	</option>
+<option id= “option19”>	AP-07	Un Análisis Petrominerográficos	25,75	</option>
+<option id= “option20”>	AP-08	Seis Análisis Peso Volumétrico	23,84	</option>
+</optgroup >				
+<optgroup label=”III_ANÁLISIS_PETROGRÁFICO_Y_MINEROGRÁFICO”>	III.- ANÁLISIS PETROGRÁFICO Y MINEROGRÁFICO			
+<option id= “option23”>	CODIGO	DESCRIPCIÓN	PRECIO EN $ POR MUESTRA	</option>
+<option id= “option24”>	PG-01	Roca cortada (por corte)	3,59	</option>
+<option id= “option25”>	PG-02	Roca pulida (por cara, sin corte)	11,22	</option>
+<option id= “option26”>	PG-03	Trituración sencilla (por muestra de mano)		</option>
+<option id= “option27”>	PG-04	Pulverización (hasta 500 grs.)	3,59	</option>
+<option id= “option28”>	PG-05	Pulverización a menos 325 mesh (cada 100 grs. de muestra)		</option>
+<option id= “option29”>	PG-06	Cuarteo	1,91	</option>
+<option id= “option30”>	PG-07	Tamizado con pesada del residuo (por matiz)		</option>
+<option id= “option31”>	PG-08	Tamizado utilizado cinco tamices (porcentaje e histograma de abundancia)		</option>
+<option id= “option32”>	PG-09	Disgregación ultrasónica de rocas y sedimentos		</option>
+<option id= “option33”>	PG-10	Solubilización de minerales (cada 5 grs. de muestra)	2,49	</option>
+<option id= “option34”>	PG-11	Separación de minerales con el Sparador Mgnético Frantz (cada 5 grs. de muestra)6,60		</option>
+<option id= “option35”>	PG-12	Separación de minerales bajo lupa binocular (por mineral)	5,5	</option>
+<option id= “option36”>	PG-13	Separación granulométrica en fracciones arena, limo y arcilla (incluye homogeneización, cuarteo, disgregación ultrasónica,</option>		
+<option id= “option36”> tamizado, decantación y entrifugado) 	13,21	</option>		
+<option id= “option37”>	PG-14	Separación de minerales pesados con Bromoformo (cada 5 grs. de muestra)	9,9	</option>
+<option id= “option38”>	PG-15	Montaje de minerales pesados en láminas de vidrio	3,67	</option>
+<option id= “option39”>	PG-16	Lavado de lutitas para análisis Micropaleontológico	11	</option>
+<option id= “option40”>	PG-17	Separación y montaje de microfósiles (Picking)	18,34	</option>
+<option id= “option41”>	PG-18	Secado	0,73	</option>
+</optgroup >				
+<optgroup label=”IV_ANÁLISIS_POR_DIFRACCIÓN_DE_RAYOS_X ”>	IV.- ANÁLISIS POR DIFRACCIÓN DE RAYOS X  			
+<option id= “option44”>	CODIGO	DESCRIPCIÓN	PRECIO EN $ POR MUESTRA	</option>
+<option id= “option45”>	DRX-01	Una preparación de muestras	3,81	</option>
+<option id= “option46”>	DRX-02	Un Análisis cualitativo (sin límite de fases)	13,86	</option>
+<option id= “option47”>	DRX-03	Un Análisis semi-cuantitativo (sin límite de fases)	36,72	</option>
+<option id= “option48”>	DRX-04	Una caracterización de arcillas	17,64	</option>
+<option id= “option49”>	DRX-05	Una corrida en condiciones de rutina	8,58	</option>
+<option id= “option50”>	DRX-06	Una corrida en condiciones especiales	14,78	</option>
+<option id= “option51”>	DRX-07	Análisis de alta resolución en muestras naturales	19,07	</option>
+<option id= “option52”>	DRX-08	Análisis de alta resolución en muestras sinteticas	23,84	</option>
+</optgroup >				
+<optgroup label=”V_ANÁLISIS_POR_FLUORESCENCIA_DE_RAYOS_X”>	V.- ANÁLISIS POR FLUORESCENCIA DE RAYOS X			
+<option id= “option55”>	CODIGO	DESCRIPCIÓN	PRECIO EN $ POR MUESTRA	</option>
+<option id= “option56”>	FRX-01	Un análisis cuantitativo por cada elemento 	13,35	</option>
+<option id= “option57”>	FRX-02	Un análisis cualitativo (barrido)	21,46	</option>
+<option id= “option58”>	FRX-03	Un análisis de tierras raras (Laurencio, Uranio, Torio o Cesio) 		</option>
+<option id= “option59”>	FRX-04	Un análisis completo de rocas	68,67	</option>
+<option id= “option60”>	FRX-05	Preparación de Pastilla compactada	1,5	</option>
+<option id= “option61”>	FRX-06	Nitrógeno líquido	1	</option>
+<option id= “option62”>	FRX-07	Analisis semi-cuantitativo multielemental	30	</option>
+</optgroup >				
+<optgroup label=”VI_ANÁLISIS_POR_MICROSCOPIA_ELECTRÓNICA₍SEM)”>	VI.- ANÁLISIS POR MICROSCOPIA ELECTRÓNICA (SEM)			
+<option id= “option65”>	CODIGO	DESCRIPCIÓN	PRECIO EN $ POR MUESTRA	</option>
+<option id= “option66”>	SEM-01	Utilización de Equipo/hora	76,3	</option>
+<option id= “option67”>	SEM-02	Microanálisis por EDS/hora	45,3	</option>
+<option id= “option68”>	SEM-03	Recubrimiento con Grafito (cinco muestras máximo)		</option>
+<option id= “option69”>	SEM-04	Una imagen Digital	3,81	</option>
+<option id= “option70”>	SEM-05	Análisis de una Imagen	7,63	</option>
+<option id= “option71”>	SEM-06	Interpretación de datos e Informe	57,23	</option>
+<option id= “option72”>	SEM-07	Recubrimiento con Oro (cinco muestras máximo)	30,52	</option>
+</optgroup >				
+<optgroup label=”VII_PREPARACIÓN_DE_MUESTRAS”>	VII.- PREPARACIÓN DE MUESTRAS			
+<option id= “option75”>	CODIGO	DESCRIPCIÓN	PRECIO EN $ POR MUESTRA	</option>
+<option id= “option76”>	PM-01	Secado	0,77	</option>
+<option id= “option77”>	PM-02	Trituración sencilla	1,65	</option>
+<option id= “option78”>	PM-03	Pulverización sin trituración	2,2	</option>
+<option id= “option79”>	PM-04	Pulverización con trituración	2,75	</option>
+<option id= “option80”>	PM-05	Cuarteo	1,1	</option>
+<option id= “option81”>	PM-06	Pulverización y homogeneización en molino de bolas (para un máximo de 6 kg de muestra)		</option>
+<option id= “option82”>	PM-07	Toma de muestra en aleaciones	2,2	</option>
+<option id= “option83”>	PM-08	Toma de muestra 	3	</option>
+<option id= “option84”>	NOTA: Estos precios rigen para un máximo de 2 kg de muestra.			</option>
+</optgroup >				
+<optgroup label=”VIII_ANÁLISIS_POR_VÍA_HUMEDA”>	VIII.- ANÁLISIS POR VÍA HUMEDA			
+<option id= “option87”>	CODIGO	DESCRIPCIÓN	PRECIO EN $ POR MUESTRA	</option>
+<option id= “option88”>	VH-01	Por cada elemento	9,54	</option>
+</optgroup >				
+<optgroup label=”XVIII_ANÁLISIS_POR_ABSORCIÓN_ATÓMICA”>	XVIII.-  ANÁLISIS POR ABSORCIÓN ATÓMICA			
+<option id= “option91”>	CODIGO	DESCRIPCIÓN	PRECIO EN $ POR MUESTRA	</option>
+<option id= “option92”>	AA-01	Por cada elemento (ver lista de elementos determinables por esta técnica analítica, Tabla N°1)		</option>
+<option id= “option93”>	AA-02	Fusión con metaborato de litio	4,4	</option>
+<option id= “option94”>	AA-03	Tratamiento triásico para elementos trazas	3,85	</option>
+<option id= “option95”>	AA-04	Fusión alcalina	3,85	</option>
+<option id= “option96”>	AA-05	Fusión ácida	3,85	</option>
+</optgroup >				
+<optgroup label=”IX_ANÁLISIS_POR_GENERADOR_DE_HIDRUROS_(Absorción_Atómica)”>	IX.- ANÁLISIS POR GENERADOR DE HIDRUROS (Absorción Atómica)			
+<option id= “option99”>	CODIGO	DESCRIPCIÓN	PRECIO EN $ POR MUESTRA	</option>
+<option id= “option100”>	GH-01	Elemento Hg (Mercurio)	22,01	</option>
+<option id= “option101”>	GH-02	Elemento As (Arsénico)	22,01	</option>
+<option id= “option102”>	GH-03	Elemento Sb (Antimonio)	22,01	</option>
+<option id= “option103”>	GH-04	Elemento Te (Telurio)	22,01	</option>
+</optgroup >				
+<optgroup label=”X_ANÁLISIS_POR_ESPECTROSCOPÍA_ÓPTICA”>	X.- ANÁLISIS POR ESPECTROSCOPÍA ÓPTICA			
+<option id= “option106”>	CODIGO	DESCRIPCIÓN	PRECIO EN $ POR MUESTRA	</option>
+<option id= “option107”>	EO-01	Un Elemento por ICP-OES	28,57	</option>
+<option id= “option108”>	EO-02	Paquete de nueve (9) Elementos por ICP-OES	114,3	</option>
+</optgroup >				
+<optgroup label=”XI_ANÁLISIS_POR_ESPECTROSCOPÍA_DE_MASA”>	XI.- ANÁLISIS POR ESPECTROSCOPÍA DE MASA			
+<option id= “option111”>	CODIGO	DESCRIPCIÓN	PRECIO EN $ POR MUESTRA	</option>
+<option id= “option112”>	EM-01	Un Elemento por ICP-MS	37,15	</option>
+</optgroup >				
+<optgroup label=”XII_ANÁLISIS_DE_ORO_Y_OTROS_METALES_PRECIOSOS_POR_ENSAYO_AL_FUEGO”>	XII.- ANÁLISIS DE ORO Y OTROS METALES PRECIOSOS POR ENSAYO AL FUEGO			
+<option id= “option115”>	CODIGO	DESCRIPCIÓN	PRECIO EN $ POR MUESTRA	</option>
+<option id= “option116”>	OMP-01	Análisis de oro fino (ley de oro)	10,46	</option>
+<option id= “option117”>	OMP-02	Análisis de oro bullion (ley de oro)	15,41	</option>
+<option id= “option118”>	OMP-03	Análisis de plata fina (ley de plata)	10,46	</option>
+<option id= “option119”>	OMP-04	Análisis de oro en mineral (tenor de oro)	13,21	</option>
+<option id= “option120”>	OMP-05	Análisis de plata en mineral (tenor de plata)	13,21	</option>
+<option id= “option121”>	OMP-06	Análisis de oro y plata en mineral	16,51	</option>
+<option id= “option122”>	OMP-07	Análisis de platino	15,41	</option>
+<option id= “option123”>	OMP-08	Análisis de paladio	15,41	</option>
+<option id= “option124”>	NOTA: Estos precios no incluyen la preparación de la muestra			</option>
+</optgroup >				
+<optgroup label=”XIII_ANÁLISIS_DE_CARBÓN”>	XIII.- ANÁLISIS DE CARBÓN 			
+<option id= “option127”>	CODIGO	DESCRIPCIÓN	PRECIO EN $ POR MUESTRA	</option>
+<option id= “option128”>	AC-01	Análisis inmediato: humedad residual, cenizas, material volátil, carbón fijo, azufre total 		</option>
+<option id= “option129”>	y poder calorífico		24,76	</option>
+<option id= “option130”>	AC-02	Determinación de poder calorífico	9,35	</option>
+<option id= “option131”>	AC-03	Determinación de azufre total	7,7	</option>
+<option id= “option132”>	AC-04	Carbón fijo (H2O, ceniza y materia volátil)		</option>
+<option id= “option133”>	AC-05	Formas de azufre pirítico	7,7	</option>
+<option id= “option134”>	AC-06	Formas de azufre sulfato	7,7	</option>
+<option id= “option135”>	AC-07	Formas de azufre orgánico	7,7	</option>
+<option id= “option136”>	AC-08	Análisis metales en cenizas: (ver lista general en la Tabla N°1)		</option>
+</optgroup >				
+<optgroup label=”XIV_ANÁLISIS_DE_ROCAS”>	XIV.- ANÁLISIS DE ROCAS			
+<option id= “option139”>	CODIGO	DESCRIPCIÓN	PRECIO EN $ POR MUESTRA	</option>
+<option id= “option140”>	AR-01	Análisis total de rocas: SiO2, Al2O3, TiO2, Fe2O3, MnO, CaO, MgO, Na2O, K2O, Pérdida al Rojo	68,78	</option>
+<option id= “option141”>	 NOTA: Estos precios no incluyen la preparación de la muestra (ver Preparación de Muestra).			</option>
+</optgroup >				
+<optgroup label=”XV_OTRAS_DETERMINACIONES”>	XV.- OTRAS DETERMINACIONES			
+<option id= “option144”>	CODIGO	DESCRIPCIÓN	PRECIO EN $ POR MUESTRA	</option>
+<option id= “option145”>	VH-02	Determinación de humedad (H2O)	1,87	</option>
+<option id= “option146”>	VH-03	Determinación de agua de constitución (H2O+)		</option>
+<option id= “option147”>	VH-04	Determinación de pérdida al rojo		</option>
+<option id= “option148”>	VH-05	Análisis de carbono (Leco)	7,7	</option>
+<option id= “option149”>	VH-06	Análisis de azufre total (Leco)	7,74	</option>
+<option id= “option150”>	COL-01	Análisis de fósforo por fotocolorimetría		</option>
+<option id= “option151”>	ES-01	Análisis de flúor por electrodo ión-selectivo		</option>
+<option id= “option152”>	ES-02	Análisis de cloruro por electrodo ión-selectivo		</option>
+<option id= “option153”>	VH-07	Determinación de sulfato (SO4=)	5,72	</option>
+<option id= “option154”>	VH-08	Insoluble en ácido	3,85	</option>
+<option id= “option155”>	VH-09	Determinación de hierro ferroso (FeO)		</option>
+<option id= “option156”>	ES-03	Determinación de pH	1,87	</option>
+</optgroup >				
+<optgroup label=”XVI_ANÁLISIS_DE_ROCAS”>	XVI.- ANÁLISIS DE ROCAS			
+<option id= “option159”>	CODIGO	DESCRIPCIÓN	PRECIO EN $ POR MUESTRA	</option>
+<option id= “option160”>	AR-01	Análisis total de rocas: SiO2, Al2O3, TiO2, Fe2O3, MnO, CaO, MgO, Na2O, K2O, Pérdida al Rojo	68,78	</option>
+<option id= “option161”>	AR-02	Otras determinaciones: H2O-, H2O+, FeO, P2O5, S, C, F-, otros metales. (ver lista general 		</option>
+<option id= “option162”>	en la Tabla N°1)		57,15	</option>
+<option id= “option163”>	NOTA: Estos precios no incluyen la preparación de la muestra (ver Preparación de Muestra).			</option>
+</optgroup >				
+<optgroup label=”XVII_ANÁLISIS_DE_AGUAS”>	XVII.- ANÁLISIS DE AGUAS			
+<option id= “option166”>	CODIGO	DESCRIPCIÓN	PRECIO EN $ POR MUESTRA	</option>
+<option id= “option167”>	AG-01	Determinación de un (1) anión	49,6	</option>
+<option id= “option168”>	AG-02	Determinación de siete (7) aniones	205,06	</option>

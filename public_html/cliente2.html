@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Registro Cliente / Empresa</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="icon" href="imagenes/LogoIngeomin.ico">
+        <link href="css/estilo_GestionLab.css" rel="stylesheet" type="text/css"/>
+        
+        <script src="js/jquery-1.7.1.min.js"></script>
+        <!--<script src="js/jquery-ui-1.8.17.custom.min.js"></script>-->
+        <!--<script src="js/basic.js"></script>-->
+        <script src="js/jspdf.debug.js"></script>
+        <script src="js/solicitud_javascript.js"></script> 
+    </head>
+    <body id="cuerpo">
+        <div id="imprimir">
+        <div id="titulo_principal" class="titulo_principal">
+        <img src="imagenes/logoingeomin.png"/>
+        </div>
+        </div>
+        <h2 id="titulo">Registro de Cliente y/o Empresa</h2>    
+                   
+        <header>
+            <nav id="barra_navegacion">
+                <a href="menu_principal.html"><img src="imagenes/inicio1.png"/><br></a>
+                            
+            </nav>
+        </header>
+        
+        <div>
+            
+            <form action="javascript:void(0)" method="POST" onsubmit="aplicacion.agregar()" name=myChoices  class="solicitud" id="solicitud1" >
+                <hr>
+                <div id="cliente">
+                    <h4>CLIENTE / EMPRESA</h4>
+                    <!--<label for="id" class="">Id: </label><input type="text" name="id" id="id" value="" size="4" />-->
+                    <label for="fecha" class="">Fecha: </label><input type="date" name="fecha" id="fecha" value="" size="10" required=""/><br>
+                    <label for="cedula" class="">Cedula / Rif: </label><input type="text" name="cedula" id="cedula" value="" size="10" required=""/>
+                    <label for="nombre" class="">Nombre: </label><input type="text" name="nombre" id="nombre" value="" size="15" required=""/>
+                    <label for="apellido" class="">Apellido: </label><input type="text" name="apellido" id="apellido" value="" size="15" required=""/><br>
+                    <label for="telf_celular" class="">Telf. Celular: </label><input type="tel" name="telf_celular" id="telf_celular" value="" size="10" required=""/>
+                    <label for="telf_fijo" class="">Telf. Fijo: </label><input type="text" name="telf_fijo" id="telf_fijo" placeholder="(0212)" value="" size="10"/>
+                    <label for="correo" class="">Correo: </label><input type="email" name="correo" id="correo" placeholder="PedroPerez@gmail.com" value="" size="15" required=""/><br>
+                    <label for="solicitud" class="">Solicitud: </label><input type="text" name="solicitud" id="solicitud" placeholder="Numero de Solicitud" value="" size="15" required=""/><br>
+                    
+                    <!--<label for="solicitud" class=""> Solicitud: </label><input type="text" id="solicitud" value size="10" required=""/>-->
+                    <button type="submit">Agregar Cliente</button>
+                </div>
+                
+                <div id="tabla_clientes">
+                    <hr>
+                    <h4>Listado General</h4>
+                    <table>
+                        <thead>
+                            <tr>
+                                <td>Id</td>
+                                <td>Fecha</td>
+                                <td>Cedula</td>
+                                <td>Nombre</td>
+                                <td>Apellido</td>
+                                <td>Telf. Celular</td>
+                                <td>Telf. Fijo</td>
+                                <td>Correo</td>
+                                <td>Solicitud</td>
+                                <td>Acción</td>
+                            </tr>
+                        </thead>
+                        <tbody id="clientes">
+                            
+                        </tbody>
+                    </table>
+                    <button><a href="solicitud.html">Nuevo Ingreso</a></button>
+                </div>
+                
+                <div id="tabla_solicitud">
+                    <hr>
+                    <h4>SOLICITUDES</h4>
+                    <table>
+                        <thead>
+                            <tr>
+                                <td>Solicitud</td>
+                                <td>Tipo de Muestra</td>
+                                <td>Cantidad</td>
+                                <td>Tipo de Análisis</td>
+                                <td>Acción</td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Sol#21-001</td>
+                                <td>Geologica</td>
+                                <td>20</td>
+                                <td>DRX</td>
+                                <td><button>Editar</button><button>Borrar</button></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <button><a href="solicitud.html">Nueva Solicitud</a></button>
+                </div>
+                
+            </form>
+        </div>
+        
+        <footer id="pie_pagina">
+            <div id="pie">
+                <hr>
+                <img src="imagenes/diablo.png" name="diablo" id="diablo"/>
+                <span>imosquerad@yahoo.com.mx</span>
+                <img src="imagenes/instagram.png" name="instagram" id="instagram"/>
+                <span>@imosquerad_mineral</span>
+            </div>
+        </footer>
+        
+        <script>
+            var url ="http://localhost/gestionLabWeb_II/clientes.php";
+            
+            var aplicacion = new function(){
+                /*this.id = document.getElementById("id");*/
+                this.fecha = document.getElementById("fecha");
+                this.cedula = document.getElementById("cedula");
+                this.nombre = document.getElementById("nombre");
+                this.apellido = document.getElementById("apellido");
+                this.telf_celular = document.getElementById("telf_celular");
+                this.telf_fijo = document.getElementById("telf_fijo");
+                this.correo = document.getElementById("correo");
+                this.solicitud = document.getElementById("solicitud");
+                
+                this.clientes = document.getElementById("clientes");
+                
+                this.leer = function(){
+                    var datos ="";
+                    
+                    fetch(url)
+                            .then(r=>r.json())
+                            .then((respuesta)=>{
+                                console.log(respuesta);
+                        
+                        /*respuesta.map(
+                                function(clientes, index ,array){
+                                    datos+="<tr>";
+                                    datos+="<td>" + clientes.id + "</td>";
+                                    datos+="<td>" + clientes.fecha + "</td>";
+                                    datos+="<td>" + clientes.cedula + "</td>";
+                                    datos+="<td>" + clientes.nombre + "</td>";
+                                    datos+="<td>" + clientes.apellido + "</td>";
+                                    datos+="<td>" + clientes.telf_celular + "</td>";
+                                    datos+="<td>" + clientes.telf_fijo + "</td>";
+                                    datos+="<td>" + clientes.correo + "</td>";
+                                    datos+="<td>" + clientes.solicitud + "</td>";
+                                    datos+="</tr>";
+                                    
+                                }
+                        );*/
+                                //return this.clientes.innerHTML = datos;
+                            })
+                              .catch(console.log);
+                      
+                    datos="<tr><td>1</td><td>2021-11-09</td><td>6849592</td><td>Ismael</td><td>Mosquera</td><td>0412 9948767</td><td>0212 3618216</td><td>imosquerad@gmail.com</td><td>21-001</td><td><button>Editar</button><button>Borrar</button></td></tr>";
+                    return this.clientes.innerHTML = datos;
+                       
+                };
+                this.agregar = function(){
+                    /*console.log(id.value);*/
+                    console.log(fecha.value);
+                    console.log(cedula.value);
+                    console.log(nombre.value);
+                    console.log(apellido.value);
+                    console.log(telf_celular.value);
+                    console.log(telf_fijo.value);
+                    console.log(correo.value);
+                    console.log(solicitud.value);
+                };
+                
+                
+            }
+            aplicacion.leer();
+        </script>
+        
+    </body>
+</html>

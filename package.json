@@ -1,0 +1,8 @@
+{
+    "name": "GestionLab_Web_II",
+    "version": "1.0.0",
+    "keywords": ["util", "functional", "server", "client", "browser"],
+    "author": "ismael",
+    "contributors": [],
+    "dependencies": {}
+}

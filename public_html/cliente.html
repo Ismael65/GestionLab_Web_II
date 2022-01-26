@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Registro Cliente / Empresa</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="icon" href="imagenes/LogoIngeomin.ico">
+        <link href="css/estilo_GestionLab.css" rel="stylesheet" type="text/css"/>
+        
+        <script src="js/jquery-1.7.1.min.js"></script>
+        <!--<script src="js/jquery-ui-1.8.17.custom.min.js"></script>-->
+        <!--<script src="js/basic.js"></script>-->
+        <script src="js/jspdf.debug.js"></script>
+        <script src="js/solicitud_javascript.js"></script>
+        
+        <style>
+            .ventana{
+                background: #1B3AF1;
+                width: 60%;
+                color: #D3D7CF;
+                font-family: sans-serif, Helvetica, Arial;
+                font-size: 18px;
+                text-align: center;
+                padding: 30px;
+                main-height: 250px;
+                border-radius: 22px;
+                position: absolute;
+                left: 17%;
+                top: 10%;
+                display: none;
+            }
+            #cerrar img{
+                position: absolute;
+                right: 3px;
+                top: 1px;
+        </style>
+        
+        <script>
+            function abrir(){
+                document.getElementById("modal-id").style.display="block";
+            }
+            function cerrar(){
+                document.getElementById("modal-id").style.display="none";
+            }
+        </script> 
+    </head>
+    <body id="cuerpo">
+        <div id="imprimir">
+        <div id="titulo_principal" class="titulo_principal">
+        <img src="imagenes/logoingeomin.png"/>
+        </div>
+        </div>
+        <h2 id="titulo">Registro de Cliente y/o Empresa</h2>    
+                   
+        <header>
+            <nav id="barra_navegacion">
+                <a href="menu_principal.html"><img src="imagenes/inicio1.png"/><br></a>           
+            </nav>
+        </header>
+        
+         <!--VENTANA MODAL-->
+        <div class="ventana" id="modal-id">
+            <div id="cerrar">
+                <a href="javascript: cerrar()"><img src="imagenes/cerrar.png" width="30"/></a><br>
+                
+                <form action="javascript:void(0)" method="POST" onsubmit="aplicacion.actualizar()">
+                    <h2>EDITANDO:</h2>
+                    <h4>CLIENTE / EMPRESA</h4>
+                    <label for="idEditar" class="">Id: </label><input readonly type="text" name="idEditar" id="idEditar" value="" size="4" />
+                    <label for="fechaEditar" class="">Fecha: </label><input type="date" name="fechaEditar" id="fechaEditar" value="" size="10" require/><br><br>
+                    <label for="cedulaEditar" class="">Cedula / Rif: </label><input type="text" name="cedulaEditar" id="cedulaEditar" value="" size="10" require/>
+                    <label for="nombreEditar" class="">Nombre: </label><input type="text" name="nombreEditar" id="nombreEditar" value="" size="15" require/>
+                    <label for="apellidoEditar" class="">Apellido: </label><input type="text" name="apellidoEditar" id="apellidoEditar" value="" size="15" require/><br><br>
+                    <label for="telf_celularEditar" class="">Telf. Celular: </label><input type="tel" name="telf_celularEditar" id="telf_celularEditar" value="" size="10" require/>
+                    <label for="telf_fijoEditar" class="">Telf. Fijo: </label><input type="text" name="telf_fijoEditar" id="telf_fijoEditar" placeholder="(0212)" value="" size="10" require/>
+                    <label for="correoEditar" class="">Correo: </label><input type="email" name="correoEditar" id="correoEditar" placeholder="PedroPerez@gmail.com" value="" size="15" require/><br><br>
+                    <label for="solicitudEditar" class="">Solicitud: </label><input type="text" name="solicitudEditar" id="solicitudEditar" placeholder="Numero de Solicitud" value="" size="15" require/><br><br>
+                    
+                    <br><br>
+                    <button type="button" onclick="cerrar()">Cerrar</button>
+                    <button type="submit">Actualizar Cliente</button>
+                </form>
+            </div>
+        </div>
+         <!--FIN   ventana MODAL-->
+        
+        <div>
+            <form action="javascript:void(0)" method="POST" onsubmit="aplicacion.agregar()" name=myChoices  class="solicitud" id="solicitud1" >
+                <hr>
+                <div id="cliente">
+                    <h4>CLIENTE / EMPRESA</h4>
+                    <!--<label for="id" class="">Id: </label><input type="text" name="id" id="id" value="" size="4" />-->
+                    <label for="fecha" class="">Fecha: </label><input type="date" name="fecha" id="fecha" value="" size="10" required=""/><br>
+                    <label for="cedula" class="">Cedula / Rif: </label><input type="text" name="cedula" id="cedula" value="" size="10" required=""/>
+                    <label for="nombre" class="">Nombre: </label><input type="text" name="nombre" id="nombre" value="" size="15" required=""/>
+                    <label for="apellido" class="">Apellido: </label><input type="text" name="apellido" id="apellido" value="" size="15" required=""/><br>
+                    <label for="telf_celular" class="">Telf. Celular: </label><input type="tel" name="telf_celular" id="telf_celular" value="" size="10" required=""/>
+                    <label for="telf_fijo" class="">Telf. Fijo: </label><input type="text" name="telf_fijo" id="telf_fijo" placeholder="(0212)" value="" size="10" require/>
+                    <label for="correo" class="">Correo: </label><input type="email" name="correo" id="correo" placeholder="PedroPerez@gmail.com" value="" size="15" required=""/><br>
+                    <label for="solicitud" class="">Solicitud: </label><input type="text" name="solicitud" id="solicitud" placeholder="Numero de Solicitud" value="" size="15" required=""/><br>
+                    
+                    <button type="reset">Limpiar Formulario</button>
+                    <button type="submit">Agregar Cliente</button>
+                </div>
+                
+                <div id="tabla_clientes">
+                    <hr>
+                    <h4>Listado General</h4>
+                    <table>
+                        <thead>
+                            <tr>
+                                <td>Id</td>
+                                <td>Fecha</td>
+                                <td>Cedula</td>
+                                <td>Nombre</td>
+                                <td>Apellido</td>
+                                <td>Telf. Celular</td>
+                                <td>Telf. Fijo</td>
+                                <td>Correo</td>
+                                <td>Solicitud</td>
+                                <td>Acción</td>
+                            </tr>
+                        </thead>
+                        <tbody id="clientes">
+                        
+                        </tbody>
+                    </table>
+                    <button><a href="solicitud.html">Solicitud de Análisis</a></button>
+                    
+                </div>
+            </form>
+        </div>
+         
+         <footer id="pie_pagina">
+            <div id="pie">
+                <hr>
+                <img src="imagenes/diablo.png" name="diablo" id="diablo"/>
+                <span>imosquerad@yahoo.com.mx</span>
+                <img src="imagenes/instagram.png" name="instagram" id="instagram"/>
+                <span>@imosquerad_mineral</span>
+            </div>
+        </footer>
+            
+        <script>
+            var url="http://localhost/gestionLabWeb_II/clientes.php";
+            var modal = document.getElementById("modal-id");
+            
+            var aplicacion = new function(){
+                
+                this.idEditar = document.getElementById("idEditar");
+                this.fechaEditar = document.getElementById("fechaEditar");
+                this.cedulaEditar = document.getElementById("cedulaEditar");
+                this.nombreEditar = document.getElementById("nombreEditar");
+                this.apellidoEditar = document.getElementById("apellidoEditar");
+                this.telf_celularEditar = document.getElementById("telf_celularEditar");
+                this.telf_fijoEditar = document.getElementById("telf_fijoEditar");
+                this.correoEditar = document.getElementById("correoEditar");
+                this.solicitudEditar = document.getElementById("solicitudEditar");
+                
+                this.fecha = document.getElementById("fecha");
+                this.cedula = document.getElementById("cedula");
+                this.nombre = document.getElementById("nombre");
+                this.apellido = document.getElementById("apellido");
+                this.telf_celular = document.getElementById("telf_celular");
+                this.telf_fijo = document.getElementById("telf_fijo");
+                this.correo = document.getElementById("correo");
+                this.solicitud = document.getElementById("solicitud");
+                
+                this.clientes = document.getElementById("clientes");
+                
+                this.leer = function(){
+                    var datos = "";
+                    
+                    fetch(url)
+                            .then(r=>r.json())
+                            .then((respuesta)=>{
+                                console.log(respuesta);
+                        
+                    respuesta.map(
+                            function(empleado, index, array){
+                                datos+="<tr>";
+                                datos+="<td>" + empleado.id + "</td>";
+                                datos+="<td>" + empleado.fecha + "</td>";
+                                datos+="<td>" + empleado.cedula + "</td>";
+                                datos+="<td>" + empleado.nombre + "</td>";
+                                datos+="<td>" + empleado.apellido + "</td>";
+                                datos+="<td>" + empleado.telf_celular + "</td>";
+                                datos+="<td>" + empleado.telf_fijo + "</td>";
+                                datos+="<td>" + empleado.correo + "</td>";
+                                datos+="<td>" + empleado.solicitud + "</td>";
+                                datos+='<td> <button type="button" name="editar" id="editar" onclick="aplicacion.editar('+ empleado.id +')">Editar</button><button type="button" id="borrar" onclick="aplicacion.borrar('+ empleado.id +')">Borrar</button>'+"</td>";
+                                datos+="</tr>";
+                            }
+                    );
+                      return this.clientes.innerHTML = datos;  
+                            })
+                              .catch(console.log);
+                    
+                    //datos = "<tr><td>1</td><td>2121-11-09</td><td>6849592</td><td>Ismael</td><td>Mosquera</td><td>0412 9948767</td><td>0212 3618216</td><td>imosquerad@gmail.com</td><td>21-001</td><td><button>Editar</button><button>Borrar</button></td></tr>";
+                    
+                    
+                };
+                this.agregar = function(){
+                    console.log(fecha.value);
+                    console.log(cedula.value);
+                    console.log(nombre.value);
+                    console.log(apellido.value);
+                    console.log(telf_celular.value);
+                    console.log(telf_fijo.value);
+                    console.log(correo.value);
+                    console.log(solicitud.value);
+                    
+                    var datosEnviar = {fecha:this.fecha.value, cedula:this.cedula.value, nombre:this.nombre.value, apellido:this.apellido.value,
+                            telf_celular:this.telf_celular.value, telf_fijo:this.telf_fijo.value, correo:this.correo.value, solicitud:this.solicitud.value};
+        
+                    fetch(url + "?insertar=1", {method:"POST", body:JSON.stringify(datosEnviar)})
+                            .then(respuesta=>respuesta.json())
+                            .then((datosRespuesta)=>{
+                                console.log("Insertados");
+                                this.leer();
+                            })
+                              .catch(console.log);
+                };
+                this.borrar = function(id){
+                    console.log(id);
+                    
+                    fetch(url + "?borrar=" + id)
+                            .then(respuesta=>respuesta.json())
+                            .then((datosRespuesta)=>{
+                                this.leer();
+                            })
+                              .catch(console.log);
+                };
+                this.editar = function(id){
+                    console.log(id);
+                    
+                    fetch(url + "?consultar=" + id)
+                            .then(respuesta => respuesta.json())
+                            .then((datosRespuesta) => {
+                                console.log(datosRespuesta[id-1]);
+                        
+                        this.idEditar.value = datosRespuesta[id-1]["id"];
+                        this.fechaEditar.value = datosRespuesta[id-1]["fecha"];
+                        this.cedulaEditar.value = datosRespuesta[id-1]["cedula"];
+                        this.nombreEditar.value = datosRespuesta[id-1]["nombre"];
+                        this.apellidoEditar.value = datosRespuesta[id-1]["apellido"];
+                        this.telf_celularEditar.value = datosRespuesta[id-1]["telf_celular"];
+                        this.telf_fijoEditar.value = datosRespuesta[id-1]["telf_fijo"];
+                        this.correoEditar.value = datosRespuesta[id-1]["correo"];
+                        this.solicitudEditar.value = datosRespuesta[id-1]["solicitud"];
+                           
+                            })
+                              .catch(console.log);
+                    
+                    abrir();
+                };
+                this.actualizar = function(){
+                    console.log("Actualizar");
+                    
+                    var datosEnviar = {id:this.idEditar.value, fecha:this.fechaEditar.value, cedula:this.cedulaEditar.value, nombre:this.nombreEditar.value, apellido:this.apellidoEditar.value,
+                            telf_celular:this.telf_celularEditar.value, telf_fijo:this.telf_fijoEditar.value, correo:this.correoEditar.value, solicitud:this.solicitudEditar.value};
+                        
+                        fetch(url + "?actualizar=1", {method:"POST", body:JSON.stringify(datosEnviar)})
+                            .then(respuesta=>respuesta.json())
+                            .then((datosRespuesta)=>{
+                                console.log("Actualizado");
+                                this.leer();
+                                cerrar();
+                            })
+                              .catch(console.log);
+                    
+                };
+                
+            }
+            aplicacion.leer();
+        </script>
+    </body>
+</html>

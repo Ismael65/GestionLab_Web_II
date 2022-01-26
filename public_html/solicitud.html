@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Solicitud</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="icon" href="imagenes/LogoIngeomin.ico">
+
+        <link href="css/estilo_GestionLab.css" rel="stylesheet" type="text/css"/>
+        <script src="js/municipio_parroquia.js" type="text/javascript"></script>
+
+        <script src="js/jquery-1.7.1.min.js"></script>
+        <!--<script src="js/jquery-ui-1.8.17.custom.min.js"></script>-->
+        <!--<script src="js/basic.js"></script>-->
+        <script src="js/jspdf.debug.js"></script>
+        <script src="js/solicitud_javascript.js"></script>
+        
+        <style>
+            .ventana{
+                background: #1B3AF1;
+                width: 60%;
+                color: #D3D7CF;
+                font-family: sans-serif, Helvetica, Arial;
+                font-size: 18px;
+                text-align: center;
+                padding: 30px;
+                main-height: 250px;
+                border-radius: 22px;
+                position: absolute;
+                left: 17%;
+                top: 10%;
+                display: none;
+            }
+            #cerrar img{
+                position: absolute;
+                right: 3px;
+                top: 1px;
+        </style>
+        
+        <script>
+            function abrir(){
+                document.getElementById("modal-id").style.display="block";
+            }
+            function cerrar(){
+                document.getElementById("modal-id").style.display="none";
+            }
+        </script> 
+    </head>
+
+    <body id="cuerpo">
+        <div id="imprimir">
+            <div id="titulo_principal" class="titulo_principal">
+                <img src="imagenes/logoingeomin.png"/>
+            </div>
+        </div>
+        <h2 id="titulo">Solicitud de Análisis</h2>    
+
+        <header
+            <div id="barra_navegacion">
+
+                <a href="cliente2.html"><img src="imagenes/FlechaIzq.png"/></a> 
+                <a href="menu_principal.html"><img src="imagenes/inicio1.png"/></a>
+
+            </div>
+
+        </header>
+        
+        <!-- Ventana MODAL para el formulario de EDICION  --> 
+        <div class="ventana" id="modal-id">
+            <div id="cerrar">                
+            <a href="javascript: cerrar()"><img src="imagenes/cerrar.png" width="30"/></a><br>
+            
+            <form action="javascript:void(0)" method="POST" onsubmit="aplicacion.actualizar()" name=myChoices class="solicitud" id="solicitud1" >
+                <div id="muestra">
+                    <hr>
+                    <h4>MUESTRA</h4>
+                    <label for="id" class="">id:</label><input type="text" name="idEditar" id="idEditar" />
+                    <label for="solicitud" class="">Solicitud:</label><input type="text" name="solicitudEditar" id="solicitudEditar" min="1" max="1000" value="" size="8" required=""/><br>
+                    <label for="cantidad" class="">Cantidad: </label><input type="text" name="cantidadEditar" id="cantidadEditar" min="1" max="1000" value="" size="8" required=""/>
+                    <label for="nom_muestra" class="">Nombre Muestra(s): </label><textarea name="nombre_muestraEditar" id="nombre_muestraEditar" cols="40" rows="3" placeholder="Nombre de la(s) Muestra(s)" required=""></textarea><br>
+                    <label for="geologica">Geológica: </label><input type="checkbox" id="geologicaEditar" name="geologicaEditar" value="geologica" />
+                    <label for="agua">Agua: </label><input type="checkbox" id="aguaEditar" name="aguaEditar" value="agua" />
+                    <label for="suelo">Suelo: </label><input type="checkbox" id="sueloEditar" name="sueloEditar" value="suelo" />
+                    <label for="polvo">Polvo: </label><input type="checkbox" id="polvoEditar" name="polvoEditar" value="polvo" />
+                    <label for="otro" class="">Otro: </label><input type="text" name="otro_muestraEditar" id="otro_muestraEditar" value=""/>
+                </div>
+
+                <div id="procedencia">
+                    <hr>
+                    <h4>PROCEDENCIA</h4>
+                    <!-- Estado -->
+                    <!--<div >
+                        <label for="estado" class="">Estado:</label>
+                        <SELECT id="firstChoiceEditar" name="firstChoiceEditar" onchange="selectChange(this, myChoices.secondChoice, arrItems1, arrItemsGrp1);">
+                            <option value=0 SELECTED>[Selecciona]</option>
+                            <option value=1>Amazonas</option>
+                            <option value=2>Anzoátegui</option>
+                            <option value=3>Apure</option>
+                            <option value=4>Aragua</option>
+                            <option value=5>Barinas</option>
+                            <option value=6>Bolívar</option>
+                            <option value=7>Carabobo</option>
+                            <option value=8>Cojedes</option>
+                            <option value=9>Delta Amacuro</option>
+                            <option value=10>Distrito Capital</option>
+                            <option value=11>Falcón</option>
+                            <option value=12>Guárico</option>
+                            <option value=13>Lara</option>
+                            <option value=14>Mérida</option>
+                            <option value=15>Miranda</option>
+                            <option value=16>Monagas</option>
+                            <option value=17>Nueva Esparta</option>
+                            <option value=18>Portuguesa</option>
+                            <option value=19>Sucre</option>
+                            <option value=20>Táchira</option>
+                            <option value=21>Trujillo</option>
+                            <option value=22>Vargas</option>
+                            <option value=23>Yaracuy</option>
+                            <option value=24>Zulia</option>
+
+                        </SELECT>
+
+                        <label for="municipio" class="">Municipio:</label>
+                        <SELECT id="secondChoiceEditar" name="secondChoiceEditar" onchange="selectChange(this, myChoices.thirdChoice, arrItems2, arrItemsGrp2);">
+                        </SELECT>
+
+
+                        <label for="parroquia" class="">Parroquia:</label>
+                        <SELECT id="thirdChoiceEditar" name="thirdChoiceEditar">                            
+                        </SELECT>
+
+                    </div>-->
+                </div>
+                <div class="borrar"></div>
+
+                <div id="tipo_analisis">
+                    <hr>
+                    <h4>TIPO DE ANÁLISIS</h4>
+
+                    <label for="petrografiaEditar" class="">Petrografia:</label><input type="checkbox" id="petrografiaEditar" name="petrografiaEditar" value="petrografia"/>
+                    <label for="drxEditar" class="">DRX:</label><input type="checkbox" id="drxEditar" name="drxEditar" value="drx"/>
+                    <label for="mebEditar" class="">MEB:</label><input type="checkbox" id="mebEditar" name="mebEditar" value="meb"/>
+                    <label for="frxEditar" class="">FRX:</label><input type="checkbox" id="frxEditar" name="frxEditar" value="frx"/>
+                    <label for="icpEditar" class="">ICP:</label><input type="checkbox" id="icpEditar" name="icpEditar" value="icp"/><br>
+                    <label for="quimicoEditar" class="">Químico: </label><input type="checkbox" id="quimicoEditar" name="quimicoEditar" value="quimico"/>
+                    <button type="button" onclick="abreVentana()">Seleccionar Elementos </button> <!-- <a href="javascript:ventanaSecundaria('http://localhost:8383/GestionLab_Web/tablaPeriodica_Elementos.html')"></a>-->
+                    <label for="elemento_quimicoEditar" class="">Elementos Químico </label><textarea  name="elemento_quimicoEditar" id="elemento_quimicoEditar" cols="40" rows="2" ></textarea><br>
+                    <label for="otro" class="">Otro: </label><input type="text" name="otro_analisisEditar" id="otro_analisisEditar" value="" size="15"/>
+                    <br>
+                    <hr>
+                    <label for="observacionesEditar" class="observaciones">Observaciones: </label><textarea  name="observacionesEditar" id="observacionesEditar" cols="40" rows="3" placeholder="Observaciones"></textarea><br>
+
+
+                </div>
+                <div id="botones">
+                    <hr>             
+                    <input type="submit" value="Actualizar" class="boton" >                    
+                    <input type="button" value="Cerrar" class="boton" onclick="cerrar()">
+
+                </div>
+
+                
+            </form>
+        </div>
+        </div>
+        
+        <!--  FORMULARIO SOLICITUD -->
+        <div>
+
+            <form action="javascript:void(0)" method="POST" onsubmit="aplicacion.agregar()" name=myChoices class="solicitud" id="solicitud1" >
+                <div id="muestra">
+                    <hr>
+                    <h4>MUESTRA</h4>
+                    <label for="solicitud" class="">Solicitud: </label><input type="text" name="solicitud" id="solicitud" /><br>
+                    <label for="cantidad" class="">Cantidad: </label><input type="text" name="cantidad" id="cantidad" min="1" max="1000" value="" size="8" required=""/>
+                    <label for="nom_muestra" class="">Nombre Muestra(s): </label><textarea name="nombre_muestra" id="nombre_muestra" cols="40" rows="3" placeholder="Nombre de la(s) Muestra(s)" required=""></textarea><br>
+                    <label for="geologica">Geológica: </label><input type="checkbox" id="geologica" name="geologica"  />
+                    <label for="agua">Agua: </label><input type="checkbox" id="agua" name="agua"  />
+                    <label for="suelo">Suelo: </label><input type="checkbox" id="suelo" name="suelo"  />
+                    <label for="polvo">Polvo: </label><input type="checkbox" id="polvo" name="polvo"  />
+                    <label for="otro" class="">Otro: </label><input type="text" name="otro_muestra" id="otro_muestra" value=""/>
+                </div>
+
+                <div id="procedencia">
+                    <hr>
+                    <h4>PROCEDENCIA</h4>
+                    <!-- Estado -->
+                    <div >
+                    <label for="estado" class="">Estado:</label>
+                    <SELECT id=firstChoice name=firstChoice onchange="selectChange(this, myChoices.secondChoice, arrItems1, arrItemsGrp1);">
+                            <option value=0 SELECTED>[Selecciona]</option>
+                            <option value=1>Amazonas</option>
+                            <option value=2>Anzoátegui</option>
+                            <option value=3>Apure</option>
+                            <option value=4>Aragua</option>
+                            <option value=5>Barinas</option>
+                            <option value=6>Bolívar</option>
+                            <option value=7>Carabobo</option>
+                            <option value=8>Cojedes</option>
+                            <option value=9>Delta Amacuro</option>
+                            <option value=10>Distrito Capital</option>
+                            <option value=11>Falcón</option>
+                            <option value=12>Guárico</option>
+                            <option value=13>Lara</option>
+                            <option value=14>Mérida</option>
+                            <option value=15>Miranda</option>
+                            <option value=16>Monagas</option>
+                            <option value=17>Nueva Esparta</option>
+                            <option value=18>Portuguesa</option>
+                            <option value=19>Sucre</option>
+                            <option value=20>Táchira</option>
+                            <option value=21>Trujillo</option>
+                            <option value=22>Vargas</option>
+                            <option value=23>Yaracuy</option>
+                            <option value=24>Zulia</option>
+                               
+                        </SELECT>
+                    
+                    <label for="municipio" class="">Municipio:</label>
+                    <SELECT id=secondChoice name=secondChoice onchange="selectChange(this, myChoices.thirdChoice, arrItems2, arrItemsGrp2);">                            
+                        </SELECT>
+
+                    
+                        <label for="parroquia" class="">Parroquia:</label>
+                        <SELECT id=thirdChoice name=thirdChoice>                            
+                        </SELECT>
+                    
+                          </div>
+                </div>
+                <!--<div class="borrar"></div>-->
+
+                <div id="tipo_analisis">
+                    <hr>
+                    <h4>TIPO DE ANÁLISIS</h4>
+                    
+                        <label for="petrografia" class="">Petrografia:</label><input type="checkbox" id="petrografia" name="petrografia" value="petrografia"/>
+                        <label for="drx" class="">DRX:</label><input type="checkbox" id="drx" name="drx" value="drx"/>
+                        <label for="meb" class="">MEB:</label><input type="checkbox" id="meb" name="meb" value="meb"/>
+                        <label for="frx" class="">FRX:</label><input type="checkbox" id="frx" name="frx" value="frx"/>
+                        <label for="icp" class="">ICP:</label><input type="checkbox" id="icp" name="icp" value="icp"/><br>
+                        <label for="quimico" class="">Químico: </label><input type="checkbox" id="quimico" name="quimico" value="quimico"/>
+                        <button type="button" onclick="abreVentana()">Seleccionar Elementos </button> <!-- <a href="javascript:ventanaSecundaria('http://localhost:8383/GestionLab_Web/tablaPeriodica_Elementos.html')"></a>-->
+                        <label for="elemento_quimico" class="">Elementos Químico </label><textarea  name="elemento_quimico" id="elemento_quimico" cols="40" rows="2" ></textarea><br>
+                        <label for="otro" class="">Otro: </label><input type="text" name="otro_analisis" id="otro_analisis" value="" size="15"/>
+                        <br>
+                        <hr>
+                        <label for="observaciones" class="observaciones">Observaciones: </label><textarea  name="observaciones" id="observaciones" cols="40" rows="3" placeholder="Observaciones"></textarea><br>
+
+                    
+                </div>
+                <div id="botones">
+                    <hr>             
+                    <input type="submit" value="Agregar Solicitud" class="boton" >
+                    <a href="" class="button" class="boton"></a><input type="button" class="boton" value="Generar PDF" onclick="javascript:crearPDF();">
+                    <input type="reset" class="boton" >
+
+                </div>
+
+                <div id="tabla_solicitud">
+
+                    <h4>Listado General</h4>
+                    <!-- tabla de MUESTRA-->
+                    <table>
+                        <thead>
+                            <tr>
+                        <h4>Muestra</h4>
+                        <td>Id</td>
+                        <td>Solicitud</td>
+                        <td>Cantidad</td>
+                        <td>Nombre</td>
+                        <td>Geologica</td>
+                        <td>Agua</td>
+                        <td>Suelo</td>
+                        <td>Polvo</td>
+                        <td>Otro</td>
+                        </tr>
+                        </thead>
+                        <tbody id="tabla_muestras">
+                            <!--<tr>
+                                <td>01</td>
+                                <td>21-001</td>
+                                <td>100</td>
+                                <td>Muestra-001</td>
+                                <td>geologica</td>
+                                <td>agua</td>
+                                <td>suelo</td>
+                                <td>polvo</td>
+                                <td>Residuo tuberia</td>
+                            </tr>-->
+                        </tbody>
+                    </table>
+                    <!-- tabla de PROCEDENCIA-->
+                    <table>
+                        <thead>
+                            <tr>
+                        <h4>Procedencia</h4>
+                        <td class="">Id</td>
+                        <td class="">Estado</td>
+                        <td class="">Municipio</td>
+                        <td class="">Parroquia</td>
+                        </tr>
+                        </thead>
+                        <tbody id="tabla_procedencia">
+                            <!--<tr>
+                                <td>01</td>
+                                <td>Distrito Capital</td>
+                                <td>Capital</td>
+                                <td>Santa Rosalia</td>
+                            </tr>-->
+                        </tbody>
+                    </table>
+                    <!-- tabla de TIPO ANALISIS-->
+                    <table>
+                        <thead>
+                            <tr>
+                        <h4>Tipo Análisis</h4>
+                        <td>Id</td>
+                        <td>Petrografia</td>
+                        <td>DRX</td>
+                        <td>MEB</td>
+                        <td>FRX</td>
+                        <td>ICP</td>
+                        <td>Quimico</td>
+                        <td>Elementos</td>
+                        <td>Otro</td>
+                        <td>Observaciones</td>
+                        <td>Acción</td>
+                        </tr>
+                        </thead>
+                        <tbody id="tabla_tipo_analisis">
+                            <!--<tr>
+                                <td>01</td>
+                                <td>petrografia</td>
+                                <td>drx</td>
+                                <td>meb</td>
+                                <td>frx</td>
+                                <td>icp</td>
+                                <td>quimico</td>
+                                <td>Fe, Al, Si, Cr, Mn</td>
+                                <td>Agua y Sangre</td>
+                                <td>sin observaciones</td>
+                                <td><button>Editar</button><button>Borrar</button></td>
+                            </tr>-->
+                        </tbody>
+                    </table> 
+                </div>
+            </form>
+        </div><br>
+
+        <footer id="pie_pagina">
+            <div id="pie">
+                <hr>
+                <img src="imagenes/diablo.png" name="diablo" id="diablo"/>
+                <span>imosquerad@yahoo.com.mx</span>
+                <img src="imagenes/instagram.png" name="instagram" id="instagram"/>
+                <span>@imosquerad_mineral</span>
+            </div>
+        </footer>
+
+        <script>
+
+
+function procedencia1(estado, municipio, parroquia){
+ estado = document.getElementById("firstChoice");
+ estado1 = estado.options[estado.selectedIndex].text;
+ 
+ municipio = document.getElementById("secondChoice");
+ municipio1 = municipio.options[municipio.selectedIndex].text;
+ 
+ parroquia = document.getElementById("thirdChoice");
+ parroquia1 = parroquia.options[parroquia.selectedIndex].text;
+ 
+};
+
+var url = "http://localhost/gestionLabWeb_II/solicitud.php";
+var modal = document.getElementById("modal-id");
+
+            var aplicacion = new function(){
+                
+                /* MUESTRAS EDITAR del formulario */
+                this.idEditar = document.getElementById("idEditar");
+                this.solicitudEditar = document.getElementById("solicitudEditar");
+                this.cantidadEditar = document.getElementById("cantidadEditar");
+                this.nombre_muestraEditar = document.getElementById("nombre_muestraEditar");
+                this.geologicaEditar = document.getElementById("geologicaEditar");
+                this.aguaEditar = document.getElementById("aguaEditar");
+                this.sueloEditar = document.getElementById("sueloEditar");
+                this.polvoEditar = document.getElementById("polvoEditar");
+                this.otro_muestraEditar = document.getElementById("otro_muestraEditar");
+                /* PROCEDENCIA EDITAR del formulario */
+                
+                /* TIPO DE ANALISIS EDITAR del formulario */
+                this.petrografiaEditar = document.getElementById("petrografiaEditar");
+                this.drxEditar = document.getElementById("drxEditar");
+                this.mebEditar = document.getElementById("mebEditar");
+                this.frxEditar = document.getElementById("frxEditar");
+                this.icpEditar = document.getElementById("icpEditar");
+                this.quimicoEditar = document.getElementById("quimicoEditar");
+                this.elemento_quimicoEditar = document.getElementById("elemento_quimicoEditar");
+                this.otro_analisisEditar = document.getElementById("otro_analisisEditar");
+                
+                this.observacionesEditar = document.getElementById("observacionesEditar");
+                //////
+                /* MUESTRAS del formulario */
+                this.solicitud = document.getElementById("solicitud");
+                this.cantidad = document.getElementById("cantidad");
+                this.nombre_muestra = document.getElementById("nombre_muestra");
+                this.geologica = document.getElementById("geologica");
+                this.agua = document.getElementById("agua");
+                this.suelo = document.getElementById("suelo");
+                this.polvo = document.getElementById("polvo");
+                this.otro_muestra = document.getElementById("otro_muestra");
+                /* PROCEDENCIA del formulario */
+                
+                /* TIPO DE ANALISIS del formulario */
+                this.petrografia = document.getElementById("petrografia");
+                this.drx = document.getElementById("drx");
+                this.meb = document.getElementById("meb");
+                this.frx = document.getElementById("frx");
+                this.icp = document.getElementById("icp");
+                this.quimico = document.getElementById("quimico");
+                this.elemento_quimico = document.getElementById("elemento_quimico");
+                this.otro_analisis = document.getElementById("otro_analisis");
+                
+                this.observaciones = document.getElementById("observaciones");
+                
+                this.muestras = document.getElementById("tabla_muestras");
+                this.procedencia = document.getElementById("tabla_procedencia");
+                this.tipo_analisis = document.getElementById("tabla_tipo_analisis");
+                
+                this.leer = function(){
+                    
+                    var datos1 = "";
+                    var datos2 = "";
+                    var datos3 = "";
+                    
+                    fetch(url)
+                            .then(r=>r.json())
+                            .then((respuesta)=>{
+                                console.log(respuesta);
+                        
+                                respuesta.map(
+                                function(solicitud, index, array){
+                                    datos1 += "<tr>";
+                                    datos1 += "<td>" + solicitud.id + "<td>";
+                                    datos1 += "<td>" + solicitud.solicitud + "<td>";
+                                    datos1 += "<td>" + solicitud.cantidad + "<td>";
+                                    datos1 += "<td>" + solicitud.nombre_muestra + "<td>";
+                                    datos1 += "<td>" + solicitud.geologica + "<td>";
+                                    datos1 += "<td>" + solicitud.agua + "<td>";
+                                    datos1 += "<td>" + solicitud.suelo + "<td>";
+                                    datos1 += "<td>" + solicitud.polvo + "<td>";
+                                    datos1 += "<td>" + solicitud.otro_muestra + "<td>";
+                                    datos1 += "</tr>";
+                                    datos1 += "<tr>";
+                                    datos1 += "<td>" + solicitud.estado1 + "<td>";
+                                    datos1 += "<td>" + solicitud.municipio1 + "<td>";
+                                    datos1 += "<td>" + solicitud.parroquia1 + "<td>";
+                                    datos1 += "</tr>";
+                                    datos1 += "<tr>";
+                                    datos1 += "<td>" + solicitud.petrografia + "<td>";
+                                    datos1 += "<td>" + solicitud.drx + "<td>";
+                                    datos1 += "<td>" + solicitud.meb + "<td>";
+                                    datos1 += "<td>" + solicitud.frx + "<td>";
+                                    datos1 += "<td>" + solicitud.icp + "<td>";
+                                    datos1 += "<td>" + solicitud.quimico + "<td>";
+                                    datos1 += "<td>" + solicitud.elemento_quimico + "<td>";
+                                    datos1 += "<td>" + solicitud.otro_analisis + "<td>";
+                                    datos1 += "<td>" + solicitud.observaciones + "<td>";
+                                    datos1 += '<td><button type="button" id="editar" onclick="aplicacion.editar('+ solicitud.id +')">Editar</button><button type="button" id="borrar" onclick="aplicacion.borrar('+ solicitud.id +')">Borrar</button><td>';
+                                    datos1 += "</tr>";
+                                    
+                                }
+                            )
+                                return this.muestras.innerHTML = datos1;
+                                return this.procedencia.innerHTML = datos1;
+                                return this.tipo_analisis.innerHTML = datos1;
+                            })
+                                    .catch(console.log);
+                            
+                            
+                    
+                    /* Tabla de MUESTRAS */
+                    //var datos1 = "<tr><td>01</td><td>21-001</td><td>100</td><td>Muestra-001</td><td>geologica</td><td>agua</td><td>suelo</td><td>polvo</td><td>Residuo tuberia</td></tr>";                    
+                    /* Tabla de PROCEDENCIA */      
+                    //var datos1 = "<tr><td>01</td><td>Distrito Capital</td><td>Capital</td><td>Santa Rosalia</td></tr>";                    
+                    /* Tabla de TIPO ANALISIS */
+                    //var datos1 = "<tr><td>01</td><td>petrografia</td><td>drx</td><td>meb</td><td>frx</td><td>icp</td><td>quimico</td><td>Fe, Al, Si, Cr, Mn</td><td>Agua y Sangre</td><td>sin observaciones</td><td><button>Editar</button><button>Borrar</button></td></tr>";
+                    
+                    
+                };
+                this.agregar = function(){
+                    var estado, municipio, parroquia = "";
+                    procedencia1(estado, municipio, parroquia);
+                    
+                    /*  MUESTRAS */
+                    console.log(solicitud.value);
+                    console.log(cantidad.value);
+                    console.log(nombre_muestra.value);
+                    console.log(geologica.value);
+                    console.log(agua.value);
+                    console.log(suelo.value);
+                    console.log(polvo.value);
+                    console.log(otro_muestra.value);
+                    /*  PROCEDENCIA */
+                    console.log(estado1);
+                    console.log(municipio1);
+                    console.log(parroquia1);
+                    /*  TIPO ANALISIS */
+                    console.log(petrografia.value);
+                    console.log(drx.value);
+                    console.log(meb.value);
+                    console.log(frx.value);
+                    console.log(icp.value);
+                    console.log(quimico.value);
+                    console.log(elemento_quimico.value);
+                    console.log(otro_analisis.value);
+                    console.log(observaciones.value);
+                    
+                    var datosEnviar = {solicitud: this.solicitud.value, cantidad: this.cantidad.value, nombre_muestra: this.nombre_muestra.value, geologica: this.geologica.value, agua: this.agua.value, suelo: this.suelo.value, polvo: this.polvo.value, otro_muestra: this.otro_muestra.value,
+                            estado1, municipio1, parroquia1,
+                            petrografia: this.petrografia.value, drx: this.drx.value, meb: this.meb.value, frx: this.frx.value, icp: this.icp.value, quimico: this.quimico.value, elemento_quimico: this.elemento_quimico.value, otro_analisis: this.otro_analisis.value, observaciones: this.observaciones.value};
+                    
+                    fetch(url + "?insertar=1", {method:"POST", body:JSON.stringify(datosEnviar)})
+                            .then(respuesta=>respuesta.json())
+                            .then((datosRespuesta)=>{
+                                console.log("Insertados");
+                                this.leer();
+                            })
+                            .catch(console.log);
+                    
+                };
+                this.borrar =function(id){
+                    console.log("Borrando " + id);
+                    
+                    fetch(url + "?borrar=" + id)
+                            .then(respuesta=>respuesta.json())
+                            .then((datosRespuesta)=>{                                
+                                this.leer();
+                            })
+                            .catch(console.log);
+                    
+                };
+                this.editar = function(id){
+                    console.log("Editando " + id);
+                    
+                    fetch(url + "?consultar=" + id)
+                            .then(respuesta=>respuesta.json())
+                            .then((datosRespuesta)=>{
+                                console.log(datosRespuesta);
+                                    /* MUESTRAS EDITAR del formulario */
+                
+                this.idEditar.value = datosRespuesta[id];
+                this.solicitudEditar.value = datosRespuesta[solicitud.value];
+                this.cantidadEditar.value = datosRespuesta[cantidad.value];
+                this.nombre_muestraEditar.value = datosRespuesta[nombre_muestra.value];
+                this.geologicaEditar.value = datosRespuesta[geologica.value];
+                this.aguaEditar.value = datosRespuesta[agua.value];
+                this.sueloEditar.value = datosRespuesta[suelo.value];
+                this.polvoEditar.value = datosRespuesta[polvo.value];
+                this.otro_muestraEditar.value = datosRespuesta[otro_muestra.value];
+                console.log(id);
+                console.log(solicitud);
+                console.log(cantidad);
+                console.log(nombre_muestra);
+                /* PROCEDENCIA EDITAR del formulario */                
+                /*this.estado1Editar = estado1;
+                this.municipio1Editar = municipio1;
+                this.parroquia1Editar = parroquia1;*/
+                /* TIPO DE ANALISIS EDITAR del formulario */
+                this.petrografiaEditar.value = "Petro";
+                this.drxEditar.value = "Dx";
+                this.mebEditar.value = "Me";
+                this.frxEditar.value = "Fx";
+                this.icpEditar.value = "Ic";
+                this.quimicoEditar.value = "Qui";
+                this.elemento_quimicoEditar.value = "EleQui";
+                this.otro_analisisEditar.value = "OtrAna";
+                
+                this.observacionesEditar.value = "Obser";
+                                this.leer();
+                            })
+                            .catch(console.log);
+                    abrir();
+                };
+                this.actualizar = function(){
+                    var estado, municipio, parroquia = "";
+                    procedencia1(estado, municipio, parroquia);
+                    
+                    console.log("Actualizar");
+                    
+                    var datosEnviar = {id: this.idEditar.value, solicitud: this.solicitud.value, cantidad: this.cantidad.value, nombre_muestra: this.nombre_muestra.value, geologica: this.geologica.value, agua: this.agua.value, suelo: this.suelo.value, polvo: this.polvo.value, otro_muestra: this.otro_muestra.value,
+                            estado1, municipio1, parroquia1,
+                            petrografia: this.petrografia.value, drx: this.drx.value, meb: this.meb.value, frx: this.frx.value, icp: this.icp.value, quimico: this.quimico.value, elemento_quimico: this.elemento_quimico.value, otro_analisis: this.otro_analisis.value, observaciones: this.observaciones.value};
+                        
+                        fetch(url + "?actualizar=1", {method:"POST", body:JSON.stringify(datosEnviar)})
+                            .then(respuesta=>respuesta.json())
+                            .then((datosRespuesta)=>{
+                                console.log("Actualizado");
+                                this.leer();
+                                cerrar();
+                            })
+                            .catch(console.log);
+                };
+                
+            }
+            aplicacion.leer();
+        </script>
+        
+    </body>
+
+</html>
